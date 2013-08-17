@@ -14,10 +14,12 @@
 @interface TimelineVC ()
 
 @property (nonatomic, strong) NSMutableArray *tweets;
+@property (nonatomic, strong) User *currentUser;
 
 - (void)onSignOutButton;
 - (void)compose;
 - (void)reload;
+- (void)getUserData;
 
 @end
 
@@ -27,8 +29,9 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.title = @"Twitter";
         [self reload];
+        [self getUserData];
+        self.title = @"Twitter";
     }
     return self;
 }
@@ -165,12 +168,22 @@
 - (void)compose {
     self.tweetView = [[TweetView alloc] initWithNibName:@"TweetView" bundle:nil];
     self.tweetView.message = nil;
+    self.tweetView.currentUser = self.currentUser;
+    self.tweetView.name.text = self.currentUser.name;
+    self.tweetView.screenname.text = self.currentUser.screenname;
     [self.navigationController pushViewController:self.tweetView animated:YES];
+}
+
+- (void)getUserData {
+    [[TwitterClient instance] currentUserWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
+        self.currentUser = [[User alloc] initWithDictionary:response];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // Do nothing
+    }];
 }
 
 - (void)reload {
     [[TwitterClient instance] homeTimelineWithCount:20 sinceId:0 maxId:0 success:^(AFHTTPRequestOperation *operation, id response) {
-        NSLog(@"%@", response);
         self.tweets = [Tweet tweetsWithArray:response];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

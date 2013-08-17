@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.name.text = self.currentUser.name;
+    self.screenname.text = self.currentUser.screenname;
     self.messageField.delegate = self;
     if ([self.message length] == 0) {
         self.messageField.placeholder = @"What's on your mind today?";
@@ -57,10 +59,15 @@
     self.charLimit.text = count;
 }
 
-#pragma mark - private methods 
+#pragma mark - private methods
 
 - (void)tweet {
-    
+    [[TwitterClient instance] tweet:self.messageField.text success:^(AFHTTPRequestOperation *operation, id response) {
+        self.messageField.text = nil;
+        self.messageField.placeholder = @"Tweet sent!";
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //
+    }];
 }
 
 @end

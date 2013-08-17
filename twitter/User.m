@@ -29,6 +29,18 @@ static User *_currentUser;
     return _currentUser;
 }
 
+- (NSString *)name {
+    return [self.data valueOrNilForKeyPath:@"name"];
+}
+
+- (NSString *)screenname {
+    return [self.data valueOrNilForKeyPath:@"screen_name"];
+}
+
+- (NSString *) image {
+    return [self.data valueOrNilForKeyPath:@"profile_image_url"];
+}
+
 + (void)setCurrentUser:(User *)currentUser {
     if (currentUser) {
         [[NSUserDefaults standardUserDefaults] setObject:[currentUser JSONString] forKey:kCurrentUserKey];
