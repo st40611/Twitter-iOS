@@ -2,6 +2,6 @@ Simple iOS 7 Twitter client, using the TwitterClient from thecodepath listed bel
 
 https://github.com/thecodepath/ios_twitter
 
-Currently supports viewing timeline - posting is a WIP.
+Currently supports viewing timeline and posting a simple tweet.
 
 ![Screenshot](screenshot.png)
