@@ -62,9 +62,10 @@
 #pragma mark - private methods
 
 - (void)tweet {
-    [[TwitterClient instance] tweet:self.messageField.text success:^(AFHTTPRequestOperation *operation, id response) {
+    [[TwitterClient instance] tweet:self.messageField.text replyToId:self.replyId success:^(AFHTTPRequestOperation *operation, id response) {
         self.messageField.text = nil;
         self.messageField.placeholder = @"Tweet sent!";
+        NSLog(@"%@", self.replyId);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //
     }];

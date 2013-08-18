@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *name;
 @property (nonatomic, weak) IBOutlet UILabel *screenname;
 @property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *replyId;
 @property (nonatomic, strong) User *currentUser;
 
 -(IBAction)editingChanged:(UITextField *)sender;

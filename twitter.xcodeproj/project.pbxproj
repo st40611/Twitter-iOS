@@ -31,6 +31,8 @@
 		445BFE7317BB4ED500D36ACE /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445BFE7217BB4ED500D36ACE /* TweetCell.xib */; };
 		445C2CAD17BB6F330075EB0A /* TweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 445C2CAB17BB6F330075EB0A /* TweetView.m */; };
 		445C2CAE17BB6F330075EB0A /* TweetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445C2CAC17BB6F330075EB0A /* TweetView.xib */; };
+		44FE3C8717C088E0009110BA /* OptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FE3C8617C088E0009110BA /* OptionCell.m */; };
+		44FE3CC917C08AF0009110BA /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44FE3CC817C0893B009110BA /* OptionCell.xib */; };
 		4A2D263314064B2DA5BDFE0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC1DF52D3B94E9285F4C2F7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,9 @@
 		4466553117BB4CEC000D9494 /* UIImage+WebP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		4466553217BB4CEC000D9494 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		4466553317BB4CEC000D9494 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		44FE3C8517C088E0009110BA /* OptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionCell.h; sourceTree = "<group>"; };
+		44FE3C8617C088E0009110BA /* OptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionCell.m; sourceTree = "<group>"; };
+		44FE3CC817C0893B009110BA /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		6D8D3D6E0083406F961146BD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CCC1DF52D3B94E9285F4C2F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -280,6 +285,9 @@
 				442998D017BB4E6600375B27 /* TweetCell.h */,
 				442998D117BB4E6600375B27 /* TweetCell.m */,
 				445BFE7217BB4ED500D36ACE /* TweetCell.xib */,
+				44FE3C8517C088E0009110BA /* OptionCell.h */,
+				44FE3C8617C088E0009110BA /* OptionCell.m */,
+				44FE3CC817C0893B009110BA /* OptionCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -400,6 +408,7 @@
 			files = (
 				42CC89AB17B0C31900B6D34B /* SignedOutVC.xib in Resources */,
 				42CC893617AF4C6A00B6D34B /* InfoPlist.strings in Resources */,
+				44FE3CC917C08AF0009110BA /* OptionCell.xib in Resources */,
 				42CC893E17AF4C6B00B6D34B /* Images.xcassets in Resources */,
 				445BFE7317BB4ED500D36ACE /* TweetCell.xib in Resources */,
 				445C2CAE17BB6F330075EB0A /* TweetView.xib in Resources */,
@@ -456,6 +465,7 @@
 				42CC89AA17B0C31900B6D34B /* SignedOutVC.m in Sources */,
 				42CC896117AF871500B6D34B /* TwitterClient.m in Sources */,
 				442998D217BB4E6600375B27 /* TweetCell.m in Sources */,
+				44FE3C8717C088E0009110BA /* OptionCell.m in Sources */,
 				42CC89AE17B0C7A600B6D34B /* User.m in Sources */,
 				42CC89B117B0C7B800B6D34B /* Tweet.m in Sources */,
 				445C2CAD17BB6F330075EB0A /* TweetView.m in Sources */,

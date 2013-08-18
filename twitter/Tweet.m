@@ -14,6 +14,10 @@
     return [self.data valueOrNilForKeyPath:@"text"];
 }
 
+- (NSString *)id_str {
+    return [self.data valueOrNilForKeyPath:@"id_str"];
+}
+
 - (NSString *)screenname {
     return [self.data valueOrNilForKeyPath:@"user.screen_name"];
 }
@@ -29,7 +33,9 @@
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array {
     NSMutableArray *tweets = [[NSMutableArray alloc] initWithCapacity:array.count];
     for (NSDictionary *params in array) {
-        [tweets addObject:[[Tweet alloc] initWithDictionary:params]];
+        Tweet *tweet = [[Tweet alloc] initWithDictionary:params];
+        tweet.type = @"tweet";
+        [tweets addObject:tweet];
     }
     return tweets;
 }
